@@ -1,0 +1,3 @@
+this is a sample file
+we will read it using python
+this is last line
