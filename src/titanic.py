@@ -31,3 +31,14 @@ print(df[col_names].head(20))
 header("Print only pclass and name where Age > 70")
 col_names = ['Pclass', 'Name', 'Age']
 print(df[df['Age'] > 70][col_names])
+
+## handle missing data
+header("Find null values")
+print(df.isnull().sum())
+header("Age Data")
+print("Age Min: ",df["Age"].min())
+print("Age Max: ",df["Age"].max())
+print("Age Median: ",df["Age"].median())
+df['Age'] = df['Age'].fillna(df['Age'].median())
+header("Find null values")
+print(df.isnull().sum())
