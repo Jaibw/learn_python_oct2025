@@ -18,3 +18,16 @@ header("Column names")
 print(df.columns)
 header("statistics of my data")
 print(df.describe())
+
+## filter data
+header("Print only pclass and name")
+col_names = ['Pclass', 'Name']
+print(df[col_names])
+header("Print only pclass and name - 5")
+print(df[col_names].head())
+header("Print only pclass and name 20")
+print(df[col_names].head(20))
+
+header("Print only pclass and name where Age > 70")
+col_names = ['Pclass', 'Name', 'Age']
+print(df[df['Age'] > 70][col_names])
