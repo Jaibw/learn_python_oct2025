@@ -42,3 +42,13 @@ print("Age Median: ",df["Age"].median())
 df['Age'] = df['Age'].fillna(df['Age'].median())
 header("Find null values")
 print(df.isnull().sum())
+
+
+## basic analysis
+header("Survival by Gender")
+#print(df.groupby('Sex')['Survived'].mean())
+print(df.groupby('Sex')['Survived'].count())
+header("Survival by Pclass - Passenger Class")
+print(df.groupby('Pclass')['Survived'].count())
+header("Survival by Pclass and Gender")
+print(df.groupby(['Pclass','Sex'])['Survived'].count())
