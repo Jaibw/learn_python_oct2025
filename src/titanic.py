@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 def header(message):
     print('=' * 100)
     print(message)
@@ -52,3 +54,8 @@ header("Survival by Pclass - Passenger Class")
 print(df.groupby('Pclass')['Survived'].count())
 header("Survival by Pclass and Gender")
 print(df.groupby(['Pclass','Sex'])['Survived'].count())
+
+# Visualization
+df.groupby('Pclass')['Survived'].count().plot(kind='bar', color='skyblue')
+plt.title('Survival by Pclass and Gender')
+plt.show()
