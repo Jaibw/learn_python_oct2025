@@ -59,3 +59,7 @@ print(df.groupby(['Pclass','Sex'])['Survived'].count())
 df.groupby('Pclass')['Survived'].count().plot(kind='bar', color='skyblue')
 plt.title('Survival by Pclass and Gender')
 plt.show()
+
+# export data
+header("Save Data")
+df.to_csv('titanic.csv')
